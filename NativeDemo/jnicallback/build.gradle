@@ -1,0 +1,41 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion project.VERSION_COMPILE_SDK
+    buildToolsVersion project.VERSION_BUILD_TOOLS
+
+    defaultConfig {
+        minSdkVersion project.VERSION_MIN_SDK
+        targetSdkVersion project.VERSION_TARGET_SDK
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags "-frtti -fexceptions"
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+        }
+    }
+}
+
+dependencies {
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile project.DEPENDENCY_ANDROID_CONSTRAINT
+    compile project.DEPENDENCY_APPCOMPAT_V7
+    testCompile project.DEPENDENCY_JUNIT
+
+
+}

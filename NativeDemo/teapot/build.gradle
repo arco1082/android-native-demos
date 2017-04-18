@@ -1,0 +1,36 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion project.VERSION_COMPILE_SDK
+    buildToolsVersion project.VERSION_BUILD_TOOLS
+
+    defaultConfig {
+        minSdkVersion project.VERSION_MIN_SDK
+        targetSdkVersion project.VERSION_TARGET_SDK
+
+        externalNativeBuild {
+            cmake {
+                arguments '-DANDROID_PLATFORM=android-17',
+                        '-DANDROID_TOOLCHAIN=clang', '-DANDROID_STL=gnustl_static'
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled = false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+                    'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path 'src/main/cpp/CMakeLists.txt'
+        }
+    }
+}
+
+dependencies {
+    compile project.DEPENDENCY_APPCOMPAT_V7
+    compile project.DEPENDENCY_ANDROID_CONSTRAINT
+    testCompile project.DEPENDENCY_JUNIT
+}
