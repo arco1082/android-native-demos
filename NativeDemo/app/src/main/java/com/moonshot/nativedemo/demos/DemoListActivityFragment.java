@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -82,6 +83,16 @@ public class DemoListActivityFragment extends Fragment implements EasyPermission
                                        Bundle savedInstanceState) {
         final View fragmentView = inflater.inflate(R.layout.fragment_demo_list, container, false);
         ButterKnife.bind(this, fragmentView);
+
+        GridLayoutManager lLayout = new GridLayoutManager(getActivity(), 2);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(lLayout);
+
+        mRecyclerView.setLayoutManager(lLayout);
+        mRecyclerView.setHasFixedSize(true);
+        mAdapter = new DemoAdapter(getActivity(), R.layout.video_row, onItemClickListener);
+        mRecyclerView.setAdapter(mAdapter);
+
         requestCameraPermissions();
         return fragmentView;
     }
@@ -136,20 +147,16 @@ public class DemoListActivityFragment extends Fragment implements EasyPermission
                     "This app needs access to your camera",
                     RC_CAMERA_PERMISSIONS, cameraPerms);
             return;
+        } else {
+
+            setupRecyclerView();
         }
 
-        setupRecyclerView();
 
     }
 
     private void setupRecyclerView() {
-        mRecyclerView.setHasFixedSize(true);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        mRecyclerView.setLayoutManager(layoutManager);
-        mRecyclerView.setHasFixedSize(true);
-        mAdapter = new DemoAdapter(getActivity(), R.layout.video_row, onItemClickListener);
-        mRecyclerView.setAdapter(mAdapter);
+
 
     }
 

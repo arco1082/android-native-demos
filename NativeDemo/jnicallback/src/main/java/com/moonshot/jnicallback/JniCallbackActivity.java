@@ -28,6 +28,10 @@ public class JniCallbackActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jnicallback_activity);
         tickView = (TextView) findViewById(R.id.tickView);
+        getSupportActionBar().setTitle("JNI Non-Static callback");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
     }
     @Override
     public void onResume() {

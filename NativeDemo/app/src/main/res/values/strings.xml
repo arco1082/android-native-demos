@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Native Demos</string>
+    <string name="app_name">AR/VR and OpenGL demos</string>
     <string name="title_activity_demo_list">DemoListActivity</string>
     <string name="action_settings">Settings</string>
 

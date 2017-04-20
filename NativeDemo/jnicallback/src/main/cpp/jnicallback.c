@@ -42,12 +42,6 @@ typedef struct tick_context {
 } TickContext;
 TickContext g_ctx;
 
-/* This is a trivial JNI example where we use a native method
- * to return a new VM String. See the corresponding Java source
- * file located at:
- *
- *   hello-jniCallback/app/src/main/java/com/example/hellojnicallback/MainActivity.java
- */
 JNIEXPORT jstring JNICALL
 Java_com_moonshot_jnicallback_JniCallbackActivity_stringFromJNI( JNIEnv* env, jobject thiz )
 {

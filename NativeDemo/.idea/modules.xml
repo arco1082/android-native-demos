@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/graph/graph.iml" filepath="$PROJECT_DIR$/graph/graph.iml" />
       <module fileurl="file://$PROJECT_DIR$/jnicallback/jnicallback.iml" filepath="$PROJECT_DIR$/jnicallback/jnicallback.iml" />
       <module fileurl="file://$PROJECT_DIR$/teapot/teapot.iml" filepath="$PROJECT_DIR$/teapot/teapot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/unityvr/unityvr.iml" filepath="$PROJECT_DIR$/unityvr/unityvr.iml" />
       <module fileurl="file://$PROJECT_DIR$/vuforiaar/vuforiaar.iml" filepath="$PROJECT_DIR$/vuforiaar/vuforiaar.iml" />
     </modules>
   </component>

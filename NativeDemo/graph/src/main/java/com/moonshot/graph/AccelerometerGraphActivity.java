@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
@@ -12,7 +14,7 @@ import javax.microedition.khronos.opengles.GL10;
  * Created by armando_contreras on 4/18/17.
  */
 
-public class AccelerometerGraphActivity extends Activity {
+public class AccelerometerGraphActivity extends AppCompatActivity {
 
     GLSurfaceView mView;
 
@@ -23,6 +25,9 @@ public class AccelerometerGraphActivity extends Activity {
 
     @Override protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        getSupportActionBar().setTitle("OpenGL Graph of Sensor Data");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         mView = new GLSurfaceView(getApplication());
         mView.setEGLContextClientVersion(2);
         mView.setRenderer(new GLSurfaceView.Renderer() {
