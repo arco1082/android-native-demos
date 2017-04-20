@@ -19,5 +19,4 @@ Libraries used on the sample project
 
 Developed By
 ------------
-
 * Armando Contreras  - <arco1082@gmail.com>
