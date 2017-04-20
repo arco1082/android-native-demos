@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.moonshot.nativedemo.DemoListActivity">
+    tools:context="com.moonshot.nativedemo.demos.DemoListActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

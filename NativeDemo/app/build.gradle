@@ -1,16 +1,8 @@
 apply plugin: 'com.android.application'
-def VUFORIA_SDK_DIR = '../..'
-def NATIVE_LIB_DIR = 'build/lib'
-def JAR_DIR = 'build/java/vuforia'
 
 android {
     compileSdkVersion project.VERSION_COMPILE_SDK
     buildToolsVersion project.VERSION_BUILD_TOOLS
-
-    sourceSets.main {
-        jni.srcDirs = []
-        jniLibs.srcDir "$VUFORIA_SDK_DIR/$NATIVE_LIB_DIR/"
-    }
 
     defaultConfig {
         applicationId "com.moonshot.nativedemo"
@@ -49,10 +41,21 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    compile files("$VUFORIA_SDK_DIR/$JAR_DIR/Vuforia.jar")
     compile project(':graph')
     compile project(':jnicallback')
     compile project(':teapot')
+    compile project(':vuforiaar')
+    compile project(':googlevr')
+
+    //Rx
+    compile project.DEPENDENCY_RX_ANDROID
+    compile project.DEPENDENCY_RX_JAVA
+
+    //Dagger
+    compile project.DEPENDENCY_GDAGGER
+    compile project.DEPENDENCY_JAVAX_ANNOTATION
+    annotationProcessor project.DEPENDENCY_DAGGER_COMPILER
+    compile project.DEPENDENCY_GUAVA
 
     compile project.DEPENDENCY_EASY_PERMISSIONS
     compile project.DEPENDENCY_APPCOMPAT_V7

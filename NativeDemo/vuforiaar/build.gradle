@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+def VUFORIA_SDK_DIR = '../..'
+def NATIVE_LIB_DIR = 'build/lib'
+def JAR_DIR = 'build/java/vuforia'
+android {
+    compileSdkVersion project.VERSION_COMPILE_SDK
+    buildToolsVersion project.VERSION_BUILD_TOOLS
+
+    sourceSets.main {
+        jni.srcDirs = []
+        jniLibs.srcDir "$VUFORIA_SDK_DIR/$NATIVE_LIB_DIR/"
+    }
+
+
+    defaultConfig {
+        minSdkVersion project.VERSION_MIN_SDK
+        targetSdkVersion project.VERSION_TARGET_SDK
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            ndk {
+                abiFilters "armeabi-v7a"
+            }
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+            ndk {
+                abiFilters "armeabi-v7a"
+            }
+        }
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile files("$VUFORIA_SDK_DIR/$JAR_DIR/Vuforia.jar")
+    compile project.DEPENDENCY_APPCOMPAT_V7
+    testCompile project.DEPENDENCY_JUNIT
+}

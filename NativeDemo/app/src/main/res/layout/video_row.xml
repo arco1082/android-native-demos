@@ -34,7 +34,7 @@
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:textColor="#111111"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/video_description"
@@ -42,9 +42,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:ellipsize="end"
-                android:maxLines="2"
+                android:maxLines="4"
                 android:textColor="#555555"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
         </LinearLayout>
 
 

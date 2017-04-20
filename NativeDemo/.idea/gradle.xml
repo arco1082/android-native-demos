@@ -9,9 +9,11 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/googlevr" />
             <option value="$PROJECT_DIR$/graph" />
             <option value="$PROJECT_DIR$/jnicallback" />
             <option value="$PROJECT_DIR$/teapot" />
+            <option value="$PROJECT_DIR$/vuforiaar" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

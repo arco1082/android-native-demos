@@ -4,9 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/NativeDemo.iml" filepath="$PROJECT_DIR$/NativeDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/googlevr/googlevr.iml" filepath="$PROJECT_DIR$/googlevr/googlevr.iml" />
       <module fileurl="file://$PROJECT_DIR$/graph/graph.iml" filepath="$PROJECT_DIR$/graph/graph.iml" />
       <module fileurl="file://$PROJECT_DIR$/jnicallback/jnicallback.iml" filepath="$PROJECT_DIR$/jnicallback/jnicallback.iml" />
       <module fileurl="file://$PROJECT_DIR$/teapot/teapot.iml" filepath="$PROJECT_DIR$/teapot/teapot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vuforiaar/vuforiaar.iml" filepath="$PROJECT_DIR$/vuforiaar/vuforiaar.iml" />
     </modules>
   </component>
 </project>

@@ -1,5 +1,7 @@
 package com.moonshot.jnicallback;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Keep;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +17,12 @@ public class JniCallbackActivity extends AppCompatActivity {
     int minute = 0;
     int second = 0;
     TextView tickView;
+
+    public static Intent createDefaultIntent(Context context) {
+        Intent callingIntent = new Intent(context, JniCallbackActivity.class);
+        return callingIntent;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

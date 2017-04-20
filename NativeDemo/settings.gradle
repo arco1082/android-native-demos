@@ -1,1 +1,1 @@
-include ':app', ':graph', ':jnicallback', ':teapot'
+include ':app', ':graph', ':jnicallback', ':teapot', ':vuforiaar', ':googlevr'

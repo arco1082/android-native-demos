@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+
+android {
+
+    compileSdkVersion project.VERSION_COMPILE_SDK
+    buildToolsVersion project.VERSION_BUILD_TOOLS
+
+    defaultConfig {
+        minSdkVersion project.VERSION_MIN_SDK
+        targetSdkVersion project.VERSION_TARGET_SDK
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile project.DEPENDENCY_APPCOMPAT_V7
+    compile project.DEPENDENCY_GOOGLE_VR_AUDIO
+    compile project.DEPENDENCY_GOOGLE_VR_BASE
+
+    testCompile project.DEPENDENCY_JUNIT
+
+}

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.moonshot.nativedemo.DemoListActivityFragment"
+    tools:context="com.moonshot.nativedemo.demos.DemoListActivityFragment"
     tools:showIn="@layout/activity_demo_list">
 
     <android.support.v7.widget.RecyclerView
